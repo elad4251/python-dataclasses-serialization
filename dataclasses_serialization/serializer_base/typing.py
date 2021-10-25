@@ -8,9 +8,9 @@ from typing_inspect import get_args, get_generic_bases, get_origin
 try:
     from typing import GenericMeta
 except ImportError:
-    from typing import _GenericAlias, _SpecialForm
+    from typing import _GenericAlias, _SpecialForm, _SpecialGenericAlias
 
-    GenericMeta = (_GenericAlias, _SpecialForm)
+    GenericMeta = (_GenericAlias, _SpecialForm, _SpecialGenericAlias)
 
 __all__ = [
     "isinstance",
